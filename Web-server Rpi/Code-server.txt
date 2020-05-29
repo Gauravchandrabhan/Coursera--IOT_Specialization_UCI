@@ -1,0 +1,12 @@
+import socket
+ms= socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+ms.bind(("",1234))
+ms.listen(5)
+conn, addr= ms.accept()
+data = conn.recv(1000)
+if data:
+	print("Got a request!\n”)
+	print(data)
+conn.close()
+ms.close()
+
