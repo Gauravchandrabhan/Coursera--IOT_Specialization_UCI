@@ -1,0 +1,7 @@
+import http.client
+conn = http.client.HTTPSConnection("www.uci.edu")
+conn.request("GET","/")
+res=conn.getresponse()
+data=res.read(1000)      
+print(data)
+conn.close()
